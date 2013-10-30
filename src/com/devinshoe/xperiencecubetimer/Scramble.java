@@ -20,14 +20,14 @@ public class Scramble {
 		// Initialize integer to hold the random number for the side
 		int randomSide;
 		// Initialize integer to hold a number for whether or not the move is prime
-		int randomPrime;
+		boolean randomPrime;
 		
 		// Generate 30 random moves with a for loop
 		for (int i = 0; i <= 30; i++) {
 			// Generate random number between 0-5 for what side the move is for
 			randomSide = randomGenerator.nextInt(5);
-			// Generate random number between 0-1 for whether or not the move is prime
-			randomPrime = randomGenerator.nextInt(1);
+			// Generate random boolean for whether or not the move is prime
+			randomPrime = randomGenerator.nextBoolean();
 			
 			// Switch statement to determine move for scramble from the random number
 			switch (randomSide) {
@@ -47,7 +47,7 @@ public class Scramble {
 			}
 			
 			// If randomPrime is 1 then make the move prime
-			if (randomPrime == 1)
+			if (randomPrime == true)
 				scramble += "'";
 			
 			// If the move is not the last in the scramble then add a space
