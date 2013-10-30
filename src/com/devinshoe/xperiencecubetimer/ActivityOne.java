@@ -6,14 +6,16 @@ import android.view.Menu;
 import android.widget.TextView;
 
 public class ActivityOne extends Activity {
-	// Initialize tvScramble
-	TextView tvScramble = (TextView) findViewById(R.id.tvScramble);
+	// Declare tvScramble
+	TextView tvScramble;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_one);
         
+        // Initialize tvScramble
+        tvScramble = (TextView) findViewById(R.id.tvScramble);
         // Generate scramble and set it to tvScramble on boot
         tvScramble.setText(Scramble.ThreeByThree());
     }
