@@ -11,7 +11,7 @@ import java.util.Random;
 public class Scramble {
 	
 	// Method to generate a 3x3 scramble
-	public String ThreeByThree() {
+	public static String ThreeByThree() {
 		
 		// String to hold the scramble
 		String scramble = "";
