@@ -17,6 +17,9 @@ public class Scramble {
 		String scramble = "";
 		// Initialize random number generator
 		Random randomGenerator = new Random();
+		// Initialize int to hold the last side used in the scramble
+		// Set to 6 so that the first move cannot conflict with it
+		int lastSide = 6;
 		// Initialize integer to hold the random number for the side
 		int randomSide;
 		// Initialize integer to hold a number for whether or not the move is prime
@@ -28,6 +31,11 @@ public class Scramble {
 			randomSide = randomGenerator.nextInt(5);
 			// Generate random boolean for whether or not the move is prime
 			randomPrime = randomGenerator.nextBoolean();
+			
+			// If the next move is the same as the last side, re-generate
+			while (randomSide == lastSide)
+				randomSide = randomGenerator.nextInt(5);
+			lastSide = randomSide;
 			
 			// Switch statement to determine move for scramble from the random number
 			switch (randomSide) {
